@@ -395,15 +395,17 @@
                   <div class="ejemplo">
                     <h5 class="ejemplo">Ejemplo Pseudoclases:not</h5>
                     <p class="ejemplo">
-                      En este ejemplo nos marcaria todo lo que no fuera h1, no
-                      lo vamos a hacer porque nos marcaria todo el texto
+                      En este ejemplo nos marcaria todo lo que no fuera h1, pero
+                      hemos puesto el codigo para que solo ataque a la
+                      class="not"
                     </p>
                     <p>
                       <code> main :not(h1) { color: orange; } </code>
+                      <code>.not:not(h1) {color: orange; } </code>
                     </p>
-                    <h1>Soy un h1</h1>
-                    <h2>No soy un h1,soy un h2</h2>
-                    <h3>No soy un h1, Soy un h3</h3>
+                    <h1 class="not">Soy un h1</h1>
+                    <h2 class="not">No soy un h1,soy un h2</h2>
+                    <h3 class="not">No soy un h1, Soy un h3</h3>
                   </div>
                 </li>
                 <li class="Pseudoclases1" id="Pseudoclases:nth-child">
