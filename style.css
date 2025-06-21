@@ -1,0 +1,172 @@
+/*  52. Pseudoclases:active . De esta manera el botón al estar pulsado convertirá las
+letras (del botón) en naranja. */
+
+button:active {
+  color: orange;
+  font-weight: bold;
+}
+
+/* 72. Pseudoclases:any-link de esta manera los enlaces que tengan un valor en su atributo href se mostrarán en color carmesí y en negrita. */
+
+a[class="any"]:any-link {
+  color: purple;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* 92. Pseudoclase:checked Con este codigo cambiamos el color o formato al radio que este marcado. */
+
+input:checked + label {
+  color: darkmagenta;
+  font-weight: bolder;
+}
+
+/* 123.Pseudoclases:default  con este codigo cambiamos el color o formato al elemento que este en estado predeterminado en un formulario */
+
+input:default + label {
+  color: green;
+}
+
+/* 148. Pseudoclases:disabled en este ejemplo vamos a marcar el boton que esta Desactivado en color rojo. */
+
+button:disabled {
+  color: red;
+}
+
+/* 170. Pseudoclases:enabled  En este ejemplo vamos a recupera "cambiar" el elemento que
+esta habilitado o con el atributo enabled activo y lo vamos a poner de color verde y el disabled en violeta .y yo lo he complicado un poco mas y les he puesto una clase a estos botones para solor marcar estos y no los del ejercicio anterior  */
+
+button[class="ejemploenabled"]:enabled {
+  color: green;
+}
+
+button[class="ejemploenabled"]:disabled {
+  color: violet;
+}
+
+/* 203 La pseudoclase :first-child En este ejemplo vamos a recuperar el primer hijo de la lista y vamos a cambiarle el color */
+/* !Y yo le he añadido[class="primer-hijo"] que es una clase que he creado para que me coja el primer hijo de esa clase y no de todo el documento */
+
+li[class="primer-hijo"]:first-child {
+  color: crimson;
+}
+
+/* 240. Pseudoclase :focus En este ejemplo vamos a recuperar el elemento que tenga el foco y le vamos a cambiar el color del fondo */
+input:focus {
+  background-color: burlywood;
+}
+
+/* 264 Pseudoclases:hover . En este caso cuando pasemos el cursor sobre la zona del div class="hover" se cambiara el color de fondo de violeta que lo hemos puesto por defecto a rojo */
+
+div[class="hover"] {
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+}
+div[class="hover"]:hover {
+  background-color: crimson;
+}
+
+/* 292 .  La pseudoclase :invalid Aqui vamos a hacer que cuando el elemento tenga un error se nos marque el fondo en rojo. */
+
+input[class="emailinvalid"]:invalid {
+  background-color: crimson;
+}
+
+/* Pseudoclases:last-child Aqui vamos a recuperar el ultimo hermano de la lista y
+cambiarle el color a crimsom. Le hemos añadido la class="ultimo-hijo" para que no afecte a todos los li del documento y solo a los de este ejemplo. */
+li[class="ultimo-hijo"]:last-child {
+  color: crimson;
+}
+
+/* 351 Pseudoclases:link  En este caso vamos a cambiar el color de los enlaces que
+                      no hemos visitado en color rojo. */
+a:link {
+  color: red;
+}
+
+/* 386 . Pseudoclases:not  En este ejemplo nos marcaria todo lo que no fuera h1, no lo vamos a hacer porque nos marcaria todo el texto por lo que lo vamos a poner como comentario
+                main :not(h1) { 
+                color: orange; 
+                }      
+*/
+
+/* 410 Pseudoclases:nth-child Aqui vamos a cambiar el 3er elemento de la lista a color
+                      verde para que sea solo el 3er elemento de esta lista le
+                      añadimos la clase li class="nth" */
+li[class="nth"]:nth-child(3) {
+  color: rgb(0, 255, 98);
+}
+
+/* 439 Pseudoclases:nth-last-child En este ejemplo vamos a cambiar el 3er elemento empezando
+                      desde el final y le vamos a cambiar el color a naranja
+                      añadiendo clase a li para no atacar todo el documento */
+.nthlast:nth-last-child(3) {
+  color: orange;
+}
+/* 466 Pseudoclases:only-child Aqui vamos a cambiar el color a la lista que solo tiene un hijo a color amarillo */
+ul[class="only"] :only-child {
+  color: orange;
+}
+/* 491 Pseudoclases:read-only aqui vamos a cambiarle cambiar el color a rojo de un campo de solo lectura y el tamaño de las cajas se ajusta al 100% de la pagina*/
+input:read-only {
+  color: crimson;
+}
+
+input {
+  width: 100%;
+}
+
+/* 519 Pseudoclases:read-write Aqui atacaremos la parte editable y la pondremos de color verde */
+
+input:read-write {
+  color: green;
+}
+input {
+  width: 100%;
+}
+
+/* 550  Pseudoclases:required Aqui vamos a atacar los campos requeridos cambiandoles el color y el background */
+.obligatorio:required::placeholder {
+  color: crimson;
+}
+input[class="obligatorio"]:required::placeholder {
+  background-color: yellow;
+}
+
+input[obligatorio]:required::placeholder {
+  width: 100%;
+}
+
+/* 594 Pseudoclases:root */
+
+:root {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  --primary: crimson;
+  --secondary: red;
+  --background: grey;
+  --border-radius: 1.2rem;
+}
+
+/* 616 Pseudoelementos::after  Vamos a crear un elemento despes del elemento que contenga
+                      li en este caso un check, con un padding a la izquerda de
+                      3px*/
+li[class="after"]::after {
+  content: "✅";
+  padding-left: 3px;
+}
+/* 645 Pseudoelementos::before Vamos a crear un elemento antes del elemento que contenga el li*/
+li[class="xmen"]::before {
+  content: "🅧";
+  padding-right: 4px;
+  color: orange;
+}
+.xmen {
+  list-style-type: none;
+}
+
+/* 719 Pseudoelementos::placeholder  */
+input[class="placeholderejemplo"]::placeholder { 
+  color: cyan; font-weight: bold; 
+}

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tema5 CSS Pseudoclases y Pseudoelementos"
+    />
+    <meta
+      name="keywords"
+      content="CSS, Pseudoclases, Pseudoelementos, Estilos"
+    />
+    <meta name="author" content="Fermin Garrido Martin" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>5.Pseudoclases y Pseudoelementos</title>
+  </head>
+  <body>
+    <header>
+      <h1>5. Pseudoclases y Pseudoelementos</h1>
+    </header>
+    <main>
+      <article class="articulo" id="Tema5 Pseudoclases y Pseudoelementos">
+        <ul class="Lista general">
+          <h2 class="nombre">Pseudoclases y Pseudoelementos</h2>
+          <p class="definicion">
+            Los pseudoelementos y pseudoclases en CSS son herramientas que nos
+            permiten aplicar estilos a partes específicas de un elemento HTML,
+            ya sea en respuesta a interacciones del usuario o a la estructura
+            del documento.
+          </p>
+
+          <section class="Pseudoclases" id="Pseudoclases">
+            <li class="Pseudoclases">
+              <h3 class="Pseudoclases">Pseudoclases</h3>
+              <p class="definicion">
+                Las pseudoclases son un tipo de selector en CSS que permite
+                aplicar estilos a un elemento en función de su estado o posición
+                en el documento. Se definen utilizando dos puntos (:) antes del
+                nombre de la pseudoclase.
+              </p>
+              <ul>
+                <li class="Pseudoclases1" id="Pseudoclases:active">
+                  <h4 class="nombre">Pseudoclases:active</h4>
+                  <p class="definicion">
+                    La pseudoclase :active nos permite recuperar un elemento que
+                    está siendo activado por el usuario (normalmente, durante el
+                    click de un ratón hasta soltarlo). Esta pseudoclase se
+                    utiliza mucho en los elementos anchor y button.
+                  </p>
+                  <h5 class="ejemplo">Ejemplo Pseudoclases:active</h5>
+                  <p class="ejemplo">
+                    De esta manera el botón al estar pulsado convertirá las
+                    letras (del botón) en naranja.
+                    <code>
+                      button:active { color: orange; font-weight: bold; }
+                    </code>
+                    <button>Haz click aquí</button>
+                  </p>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoclases:any-link">
+                  <h4 class="nombre">Pseudoclases:any-link</h4>
+                  <p class="definicion">
+                    La pseudoclase :any-link nos permite recuperar un elemento
+                    link que haya sido visitado o no, siempre y cuando tenga un
+                    valor en su href.
+                  </p>
+                  <h5 class="ejemplo">Pseudoclases:any-link ejemplo:</h5>
+                  <p class="ejemplo">
+                    <code>
+                      a:any-link { color: purple; font-weight: bold; } lo
+                      modificamos por a[class="any"]:any-link { color: purple;
+                      font-weight: bold; } para que solo actue en este apartado
+                      y no en todo el documento.º
+                    </code>
+                    de esta manera los enlaces que tengan un valor en su
+                    atributo href se mostrarán en color púrpura y en negrita.
+                  </p>
+                  <a class="any" href="https://www.google.com/">Google</a>
+                  <a class="any" href="https://www.twitter.com/">Twitter</a>
+                  <a>No hay link</a>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoclases:checked">
+                  <h4 class="nombre">Pseudoclases:checked</h4>
+                  <p class="definicion">
+                    La pseudoclase :checked nos permite recuperar cualquier
+                    elemento checkbox, radio u option que esté marcado o con el
+                    atributo checked activo.
+                  </p>
+                  <h5 class="ejemplo">Ejemplo Pseudoclases:checked</h5>
+                  <p class="ejemplo">
+                    <code>input:checked + label { color: crimson;}</code>
+                    Con este codigo cambiamos el color o formato al raido que
+                    este marcado.
+                  </p>
+
+                  <p>
+                    <input type="radio" name="my-input" id="yes" />
+                    <label for="yes">Yes</label>
+
+                    <input type="radio" name="my-input" id="no" checked />
+                    <label for="no">No</label>
+                  </p>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoclases:default">
+                  <h4 class="nombre" id="Pseudoclases:defaulttitulo">
+                    Pseudoclases:default
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :default nos permite recuperar cualquier
+                    elemento que esté en su estado predeterminado dentro de un
+                    formulario. Esta pseudoclase se utiliza mucho en elementos
+                    button, checkbox, radio y option que tengan una opción
+                    marcada desde el principio.
+                  </p>
+                  <h5 class="ejemplo">Ejemplo Pseudoclases:default</h5>
+                  <p class="ejemplo">
+                    el CSS:
+                    <code>input:default + label { color: green; } </code>
+                    con este codigo cambiamos el color o formato al elemento que
+                    este en estado predeterminado en un formulario.
+                  </p>
+                  <p>
+                    <input type="radio" name="hero" id="spiderman" checked />
+                    <label for="spiderman">Spiderman</label>
+
+                    <input type="radio" name="hero" id="ironman" />
+                    <label for="ironman">Iron Man</label>
+
+                    <input type="radio" name="hero" id="daredevil" />
+                    <label for="daredevil">Daredevil</label>
+
+                    <input type="radio" name="hero" id="hulk" />
+                    <label for="hulk">Hulk</label>
+                  </p>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoclases:disabled">
+                  <h4 class="nombre" id="Pseudoclases:disabledtitulo">
+                    Pseudoclases:disabledtitulo
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :disabled nos permite recuperar un elemento
+                    deshabilitado o con el atributo disabled activo.
+                  </p>
+                  <h5 class="ejemplo">Ejemplo Pseudoclases:disabled</h5>
+                  <p class="ejemlpo">
+                    en este ejemplo vamos a marcar el boton que esta Desactivado
+                    en color rojo.
+                    <code>button:disabled { color: red; } </code>
+                    <button>Activado</button>
+                    <button disabled>Desactivado</button>
+                  </p>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:enabled">
+                  <h4 class="nombre" id="Pseudoclases:enabledtitulo">
+                    Pseudoclases:enabled
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :enabled nos permite recuperar cualquier
+                    elemento habilitado en el documento, diferenciando asi a los
+                    deshabilitados. Enabled en CSS se utiliza para seleccionar
+                    elementos de formulario que están habilitados, es decir,
+                    aquellos con los que el usuario puede interactuar. Es
+                    especialmente útil cuando se quiere aplicar estilos visuales
+                    distintos a los elementos activos frente a los
+                    deshabilitados (:disabled).
+                  </p>
+                  <h5 class="ejemplo">Ejemplo Pseudoclases:enabled</h5>
+                  <p class="ejemplo">
+                    En este ejemplo vamos a recupera "cambiar" el elemento que
+                    esta habilitado o con el atributo enabled activo y lo vamos
+                    a poner de color verde y el disabled en rojo. He cambiado un
+                    poco el codigo añadiendole a las etiquetas button la clase
+                    ejemploenabled para que solo cambie los botones de este
+                    ejemplo y no la de las anteriores , por tanto tambien he
+                    añadido al codigo un selector de atributo
+                    class="ejemploenabled" para que no afecte a los botones de
+                    arriba. que se añade con < class="ejemploenabled">
+                  </p>
+                  <p>
+                    <code
+                      >button[class="ejemploenabled"]:disabled { color: red; }
+                    </code>
+                  </p>
+                  <p>
+                    <code>
+                      button[class="ejemploenabled"]:enabled { color: green; }
+                    </code>
+                  </p>
+                  <p>
+                    <button class="ejemploenabled">Activado</button>
+                    <button class="ejemploenabled" disabled>Desactivado</button>
+                  </p>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:first-child">
+                  <h4 class="nombre" id="Pseudoclases:first-childtitulo">
+                    Pseudoclases:first-child
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :first-child nos devuelve el primer elemento
+                    de un grupo de elementos hermanos con el mismo padre.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:first-child</h5>
+                    <p class="ejemplo">
+                      En este ejemplo vamos a recuperar el primer hijo de la
+                      lista y vamos a cambiarle el color
+                    </p>
+                    <p>
+                      <code>li:first-child { color: crimson; }</code>
+                      !Y yo le he añadido[class="primer-hijo"] que es una clase
+                      que he creado para estos "li" que me coja el primer hijo
+                      de esa clase y no de todo el documento, por tanto:
+                      <code
+                        >li[class="primer-hijo"]:first-child { color: crimson;
+                        }</code
+                      >
+                    </p>
+                    <ul>
+                      <li class="primer-hijo">Primero</li>
+                      <li class="primer-hijo">Segundo</li>
+                      <li class="primer-hijo">Tercero</li>
+                    </ul>
+                  </div>
+                </li>
+                < class="Pseudoclases1" id="Pseudoclases:focus">
+                <h4 class="nombre" id="Pseudoclases:focustitulo">
+                  Pseudoclases:focus
+                </h4>
+                <p class="definicion">
+                  La pseudoclase :focus representa los elementos que han
+                  activado su foco al usuario interactuar con ellos o al haber
+                  entrado en uno de los elementos.
+                </p>
+                <div class="ejemplo">
+                  <h5 class="ejemplo">Ejemplo Focus</h5>
+                  <p class="ejemplo">
+                    En este caso vamos a hacer que cuando interactuamos con un
+                    elemento se cambie el color del background para que se
+                    resalte.
+                  </p>
+                  <p>
+                    <code>input:focus { background-color: burlywood; }</code>
+                  </p>
+                  <input type="text" name="username" placeholder="username" />
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="email@email.com"
+                  />
+                </div>
+                <li class="Pseudoclases1" id="Pseudoclases:hover">
+                  <h4 class="nombre" id="Pseudoclases:hovertitulo">
+                    Pseudoclases:hover
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :hover nos permite recuperar un elemento que
+                    ha sido activado por el usuario durante el desplazamiento
+                    del cursor sobre él. No es necesario que el usuario active
+                    el elemento para que esta pseudoclase sea activada.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:hover</h5>
+                    <p class="ejemplo">
+                      En este caso cuando pasemos el cursor sobre la zona del
+                      div class="hover" se cambiara el color de fondo de violeta
+                      que lo hemos puesto por defecto a rojo
+                    </p>
+                    <p>
+                      <code>
+                        div[class="hover"] { width: 100px; height: 100px;
+                        background-color:blueviolet; }
+                      </code>
+                      <code>
+                        div[class="hover"]:hover { background-color: crimson; }
+                      </code>
+                    </p>
+                    <div class="hover"></div>
+                  </div>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:invalid">
+                  <h4 class="nombre" id="Pseudoclases:invalidtitulo">
+                    Pseudoclases:invalid
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :invalid nos permitirá recuperar un elemento
+                    que haya tenido un error de campo a la hora de validarlo
+                    dentro de un formulario.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:invalid</h5>
+                    <p class="ejemplo">
+                      Aqui vamos a hacer que cuando el elemento tenga un error
+                      se nos marque el fondo en rojo.(En este caso al ser un
+                      input required y todavia no estar completado, se nos marca
+                      con invalido con el fondo rojo) le añadimos clase para que
+                      no nos modifique toda la pagina. class="emailinvalid"
+                    </p>
+                    <p>
+                      <code
+                        >input[class="emailinvalid"]:invalid { background-color:
+                        crimson; }</code
+                      >
+                    </p>
+                    <form>
+                      <label for="name">Ingresa tu nombre:</label>
+                      <input type="text" id="name" />
+                      <label for="email"
+                        >Introduzca una dirección de e-mail:</label
+                      >
+                      <input
+                        class="emailinvalid"
+                        type="email"
+                        id="email"
+                        required
+                      />
+                    </form>
+                  </div>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:last-child">
+                  <h4 class="nombre" id="Pseudoclases:last-childtitulo">
+                    Pseudoclases:last-child
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :last-child nos devuelve el último elemento
+                    de un grupo de elementos hermanos con el mismo padre.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:last-child</h5>
+                    <p class="ejemplo">
+                      Aqui vamos a recuperar el ultimo hermano de la lista y
+                      cambiarle el color a crimsom. Le hemos añadido la
+                      class="ultimo-hijo" para que no afecte a todos los li del
+                      documento y solo a los de este ejemplo.
+                    </p>
+                    <p>
+                      <code
+                        >li[class="ultimo-hijo"]:last-child { color: crimson;
+                        }</code
+                      >
+                    </p>
+                    <ul>
+                      <li class="ultimo hijo">Primero</li>
+                      <li class="ultimo-hijo">Segundo</li>
+                      <li class="ultimo-hijo">Tercero</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:link">
+                  <h4 class="nombre" id="Pseudoclases:linktitulo">
+                    Pseudoclases:link
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :link nos devuelve los elementos que aún no
+                    han sido visitados y que incluyan el atributo href,
+                    normalmente utilizado con las etiquetas anchor, area o link.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo La pseudoclase :link</h5>
+                    <p class="ejemplo">
+                      En este caso vamos a cambiar el color de los enlaces que
+                      no hemos visitado en color rojo.
+                    </p>
+                    <p>
+                      <code>a:link { color: red; }</code>
+                    </p>
+                    <ul>
+                      <li>
+                        <a href="http://www.google.com">Google</a>
+                      </li>
+                      <li>
+                        <a href="http://www.facebook.com">Facebook</a>
+                      </li>
+                      <li>
+                        <a href="http://www.twitter.com">Twitter</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:not">
+                  <h4 class="nombre" id="Pseudoclases:nottitulo">
+                    Pseudoclases:not
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :not nos devuelve los elementos que no
+                    coincidan con el selector indicado, es decir, negamos los
+                    elementos. Se le conoce también como la pseudoclase de
+                    negación.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:not</h5>
+                    <p class="ejemplo">
+                      En este ejemplo nos marcaria todo lo que no fuera h1, no
+                      lo vamos a hacer porque nos marcaria todo el texto
+                    </p>
+                    <p>
+                      <code> main :not(h1) { color: orange; } </code>
+                    </p>
+                    <h1>Soy un h1</h1>
+                    <h2>No soy un h1,soy un h2</h2>
+                    <h3>No soy un h1, Soy un h3</h3>
+                  </div>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:nth-child">
+                  <h4 class="nombre" id="Pseudoclases:nth-childtitulo">
+                    Pseudoclases:nth-child
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :nth-child nos devuelve los elementos que
+                    coincidan con la posición indicada entre una lista de
+                    elementos hermanos. Esta posición se le indicará mediante el
+                    número, odd (impar) o even (par).
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo nth-child</h5>
+                    <p class="ejemplo">
+                      Aqui vamos a cambiar el 3er elemento de la lista a color
+                      verde para que sea solo el 3er elemento de esta lista le
+                      añadimos la clase li class="nth"
+                      <code>
+                        li[class="nth"]:nth-child(3) { color: orange; }
+                      </code>
+                    </p>
+                    <ul>
+                      <li class="nth">Primero</li>
+                      <li class="nth">Segundo</li>
+                      <li class="nth">Tercero</li>
+                      <li class="nth">Cuarto</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:nth-last-child">
+                  <h4 class="nombre" id="Pseudoclases:nth-last-childtitulo">
+                    Pseudoclases:nth-last-child
+                  </h4>
+                  <p class="definicion">
+                    La pseudoclase :nth-last-child nos devuelve los elementos
+                    que coincidan con la posición indicada entre una lista de
+                    elementos hermanos contando desde el final hasta el
+                    comienzo. Esta posición se le indicará mediante el número
+                    deseado.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:nth-last-child</h5>
+                    <p class="ejemplo">
+                      En este ejemplo vamos a cambiar el 3er elemento empezando
+                      desde el final y le vamos a cambiar el color a naranja
+                      añadiendo clase a li para no atacar todo el documento
+                      <code>
+                        li[class="nthlast"]:nth-last-child(3) { color: orange; }
+                      </code>
+                    </p>
+                    <p>
+                      vamos a probar atacando directamente a la clase para poner
+                      en practica algo de lo anterior
+                      <code>.nthlast:nth-last-child(3) {color: orange;}</code>
+                    </p>
+                    <ul>
+                      <li class="nthlast">Primero</li>
+                      <li class="nthlast">Segundo</li>
+                      <li class="nthlast">Tercero</li>
+                      <li class="nthlast">Cuarto</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:only-child">
+                  <h4 class="nombre" id="Pseudoclases:only-childtitulo">
+                    Pseudoclases:only-child
+                  </h4>
+                  <p class="definicion"></p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:only-child</h5>
+                    <p class="ejemplo">
+                      Aqui vamos a cambiar el color a la lista que solo tiene un
+                      hijo a color amarillo y vamos a añadirle clase a los dos
+                      ul para que no nos ataque todo el documento
+                      <code>ul :only-child { color: yellow; }</code>
+                    </p>
+
+                    <ul class="only">
+                      <li>Primero</li>
+                      <li>Segundo</li>
+                      <li>Tercero</li>
+                      <li>Cuarto</li>
+                    </ul>
+                    <ul class="only">
+                      <li>Esta lista solo tiene un elemento</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="Pseudoclases1" id="Pseudoclases:read-only">
+                  <h4 class="nombre" id="Pseudoclases:read-onlytitulo">
+                    Pseudoclases:read-only
+                  </h4>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:read-only</h5>
+                    <p class="definicion">
+                      La pseudo-clase :read-only nos devuelve los elementos que
+                      no son editables por el usuario, normalmente son aquellos
+                      inputs que incluyen el atributo “read-only” o etiquetas
+                      normales no editables.
+                    </p>
+                    <p class="ejemplo">
+                      aqui vamos a cambiarle cambiar el color a rojo de un campo
+                      de solo lectura
+                      <code> input:read-only color: crimson; </code>
+                      <code> input { width: 100%; } </code>
+                    </p>
+                    <input type="text" value="Este campo es editable." />
+                    <input
+                      type="text"
+                      value="Este campo es solo de lectura"
+                      readonly
+                    />
+                  </div>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoclases:read-write">
+                  <h4 class="nombre" id="Pseudoclases:read-writetitulo"></h4>
+                  <p class="definicion">
+                    La pseudo-clase :read-write nos devuelve los elementos
+                    editables por el usuario, normalmente suele aplicarse a
+                    inputs o etiquetas que incluyan el atributo
+                    “contenteditable”.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:read-write</h5>
+                    <p class="ejemplo">
+                      Aqui atacaremos la parte editable y la pondremos de color
+                      verde
+                      <code> input:read-write color: green; </code>
+                      <code> input { width: 100%; } </code>
+                    </p>
+                    <input
+                      type="text"
+                      contenteditable="false"
+                      value="Este campo es editable"
+                    />
+                    <input
+                      type="text"
+                      value="Este campo es solo de lectura"
+                      readonly
+                    />
+                  </div>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoclases:required">
+                  <h4 class="nombre" id="Pseudoclases:requiredtitulo"></h4>
+                  <p class="definicion">
+                    La pseudo-clase :required nos devuelve los elementos que
+                    contengan el atributo “required”, normalmente se aplica a
+                    las etiquetas “input”.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:required</h5>
+                    <p class="ejemplo">
+                      Aqui vamos a atacar los campos requeridos cambiandoles el
+                      color y el background
+                      <code>
+                        input[obligatorio]:required::placeholder { color:
+                        crimsom; }
+                      </code>
+                      <code
+                        >input[obligatorio]:required::placeholder
+                        {background-color: yellow}
+                      </code>
+                      <code>input { width: 100%; }</code>
+                    </p>
+                    <input
+                      class="obligatorio"
+                      type="text"
+                      placeholder="Username"
+                      required
+                    />
+                    <input
+                      class="obligatorio"
+                      type="text"
+                      placeholder="Position"
+                    />
+                    <input class="obligatorio" type="password"
+                    placeholder="Password" required /
+                  </div>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoclases:root">
+                  <h4 class="nombre" id="Pseudoclases:roottitulo"></h4>
+                  <p class="definicion">
+                    La pseudo-clase :root nos devuelve el elemento raíz del
+                    documento para tener una mayor especificidad incluso que la
+                    etiqueta html. Se utiliza mucho para declarar variables en
+                    nuestra hoja de estilos.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoclases:root</h5>
+                    <p class="ejemplo">
+                      Aqui le damos estilo a toda la pagina con esas reglas y
+                      parametros.
+                      <code>
+                        :root{ font-size: 16px; font-family:
+                        "Roboto",sans-serif; --primary: crimson; --secondary:
+                        red; --background: grey; --border-radius: 1.2rem; }
+                      </code>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoelementos::after">
+                  <h4 class="nombre" id="Pseudoelementos::aftertitulo"></h4>
+                  <p class="definicion">
+                    ::after crea un pseudoelemento, por defecto in-line, después
+                    del elemento a través de la propiedad “content”. Estos
+                    pseudoelementos serán contenidos por la caja del elemento.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoelementos::after</h5>
+                    <p class="ejemplo">
+                      Vamos a crear un elemento despes del elemento que contenga
+                      li en este caso un check, con un padding a la izquerda de
+                      3px
+                      <code>
+                        li::after { content: "✅"; padding-left: 3px; }
+                      </code>
+                    </p>
+                    <ul>
+                      <h6>Tareas completadas</h6>
+                      <li class="after">Programar</li>
+                      <li class="after">Hacer la comida</li>
+                      <li class="after">Programar</li>
+                      <li class="after">Limpiar la habitación</li>
+                      <li class="after">Programar</li>
+                      <li class="after">Programar más</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoelementos::before">
+                  <h4 class="nombre" id="Pseudoelementos::beforetitulo"></h4>
+                  <p class="definicion">
+                    ::before crea un pseudoelemento, por defecto in-line, antes
+                    del elemento a través de la propiedad “content”. Estos
+                    pseudoelementos serán contenidos por la caja del elemento.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo Pseudoelementos::before</h5>
+                    <p class="ejemplo">
+                      Vamos a añadir un pseudoelemento delante del elemento que
+                      contenga el li.
+                      <code>
+                        li::before { content: "🅧"; padding-right: 4px; color:
+                        orange; }
+                      </code>
+                      <code> li { list-style-type: none; } </code>
+                    </p>
+                    <h6>X-Men</h6>
+                    <ul>
+                      <li class="xmen">Profesor X</li>
+                      <li class="xmen">Lobezno</li>
+                      <li class="xmen">Tormenta</li>
+                      <li class="xmen">Ciclope</li>
+                      <li class="xmen">Jean Grey</li>
+                      <li class="xmen">Bestia</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoelementos::first-letter">
+                  <h4
+                    class="nombre"
+                    id="Pseudoelementos::first-lettertitulo"
+                  ></h4>
+                  <p class="definicion">
+                    ::first-letter aplica estilos a la primera letra de la
+                    primera linea del elemento siempre y cuando no sea precedida
+                    por una imagen, tabla o similares.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">
+                      Ejemplo Pseudoelementos::first-letter
+                    </h5>
+                    <p class="ejemplo">
+                      Pendiente de implementar
+                      <code></code>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoelementos::first-line">
+                  <h4
+                    class="nombre"
+                    id="Pseudoelementos::first-linetitulo"
+                  ></h4>
+                  <p class="definicion">
+                    ::first-line aplica estilos a la primera linea de un bloque
+                    de texto, sabiendo que puede depender de el ancho del
+                    bloque, el documento o la propia fuente del texto en
+                    cuestión.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">Ejemplo</h5>
+                    <p class="ejemplo">
+                      pendiente de implementar
+                      <code> </code>
+                    </p>
+                  </div>
+                </li>
+
+                <li class="Pseudoclases1" id="Pseudoelementos::placeholder">
+                  <h4 class="nombre" id="titulo">
+                    Pseudoelementos::placeholder
+                  </h4>
+                  <p class="definicion">
+                    ::placeholder nos permite modificar los estilos por defecto
+                    de los elementos provisionales de los elementos “input” o
+                    “textarea”.
+                  </p>
+                  <div class="ejemplo">
+                    <h5 class="ejemplo">
+                      Ejemplo Pseudoelementos::placeholder
+                    </h5>
+                    <p class="ejemplo">
+                      Aqui vamos a cambiarle el placeholder a color celeste y
+                      negrita.
+                      <code>
+                        input::placeholder { color: cyan; font-weight: bold; }
+                      </code>
+                    </p>
+                    <input
+                      class="placeholderejemplo"
+                      type="text"
+                      placeholder="Username"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </section>
+        </ul>
+      </article>
+    </main>
+  </body>
+</html>
